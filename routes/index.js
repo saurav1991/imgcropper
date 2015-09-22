@@ -8,7 +8,7 @@ var async = require('async');
 var fs = require('fs');
 var imageUtils = require('../lib/image_utils');
 
-imgur.setClientID('52f6b0a889f9619');
+imgur.setClientID(process.env.imgurclientid);
 
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
