@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 router.post('/upload', upload.single('image'), function (req, res, next) {
 	console.log('File info', req.file);
 	var fileName = req.file.filename;
-	imageUtils.loadAndCrop(fileName, function (err, data) {
+	imageUtils.loadAndCrop(fileName, function (err, data) {			//data will contain the imgur links for the images
 		if (err) {
 			next(err);
 		} else {
