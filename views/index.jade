@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    p Please upload a file
+    form(action='/upload',method='post',enctype='multipart/form-data')
+        input(type='file',name='image')
+        input(type='submit',value='Upload')
+
+    #error
+        if error
+            if error.message
+                p Error #{error.message}
